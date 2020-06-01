@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "../OpenNMT-py/generate.py", line 24, in <module>
+    from drqa.reader import Predictor
+  File "/home/kurian/Projects/QG-Net/DrQA/drqa/__init__.py", line 20, in <module>
+    from . import tokenizers
+  File "/home/kurian/Projects/QG-Net/DrQA/drqa/tokenizers/__init__.py", line 20, in <module>
+    from .corenlp_tokenizer import CoreNLPTokenizer
+  File "/home/kurian/Projects/QG-Net/DrQA/drqa/tokenizers/corenlp_tokenizer.py", line 14, in <module>
+    import pexpect
+  File "/home/kurian/anaconda3/lib/python3.7/site-packages/pexpect/__init__.py", line 75, in <module>
+    from .pty_spawn import spawn, spawnu
+  File "/home/kurian/anaconda3/lib/python3.7/site-packages/pexpect/pty_spawn.py", line 14, in <module>
+    from .spawnbase import SpawnBase
+  File "/home/kurian/anaconda3/lib/python3.7/site-packages/pexpect/spawnbase.py", line 224
+    def expect(self, pattern, timeout=-1, searchwindowsize=-1, async=False):
+                                                                   ^
+SyntaxError: invalid syntax
+
