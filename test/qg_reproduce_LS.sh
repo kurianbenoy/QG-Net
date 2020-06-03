@@ -17,7 +17,7 @@ python3 ../OpenNMT-py/generate.py \
 -src input.for.test/input.txt \
 -output output_questions_$model.txt \
 -dynamic_dict \
--verbose -batch_size 1 -gpu 0 -beam_size $beam_size -replace_unk -n_best $nbest \
+-verbose -batch_size 1  -beam_size $beam_size -replace_unk -n_best $nbest \
 -alpha $alpha -beta $beta \
 -attn_vis
 
