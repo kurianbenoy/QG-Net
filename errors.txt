@@ -16,3 +16,22 @@ Traceback (most recent call last):
                                                                    ^
 SyntaxError: invalid syntax
 
+
+2)
+
+ImportError: numpy.core.multiarray failed to import
+
+3) In conda environment
+
+THCudaCheck FAIL file=torch/csrc/cuda/Module.cpp line=32 error=35 : CUDA driver version is insufficient for CUDA runtime version
+Traceback (most recent call last):
+  File "../OpenNMT-py/generate.py", line 357, in <module>
+    main()
+  File "../OpenNMT-py/generate.py", line 63, in main
+    torch.cuda.set_device(opt.gpu)
+  File "/home/kurian/anaconda3/lib/python3.7/site-packages/torch/cuda/__init__.py", line 262, in set_device
+    torch._C._cuda_setDevice(device)
+RuntimeError: cuda runtime error (35) : CUDA driver version is insufficient for CUDA runtime version at torch/csrc/cuda/Module.cpp:32
+
+
+
