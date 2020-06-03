@@ -38,6 +38,6 @@ python3 OpenNMT-py/generate.py \
 -src $src \
 -output  $dir/generation/model_$modelname \
 -dynamic_dict \
--verbose -batch_size 1 -gpu 0 -beam_size $beam_size -replace_unk -n_best $nbest \
+-verbose -batch_size 1 -no-cuda -beam_size $beam_size -replace_unk -n_best $nbest \
 -alpha $alpha -beta $beta
 
