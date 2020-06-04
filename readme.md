@@ -146,4 +146,19 @@ Below is a more elaborate illustration of QG-Net model:
 ![Illustration of QG-Net](model.png)
 *Illustration of QG-Net Model*
 
+## input
 
+## Output
+```
+what do geneticists use to study the inheritance pattern of human genetic diseases ?
+what is unethical in humans ?
+when was warsaw ranked as the 32nd most liveable city in the world ?
+how many base pairs are on the human genome ?
+how many functional genes are on the human haploid genome ?
+what is the name of the study in which each human chromosome was analyzed ?
+what is the primary energy currency of cells ?
+along with education and race , what did weber believe different groups were affected by ?
+what is one of the positive contributions of deviance ?
+what act became one of the identifying characteristics of the age of jackson ?
+attendees agreed to a declaration of rights and sentiments based on what document ?
+```
