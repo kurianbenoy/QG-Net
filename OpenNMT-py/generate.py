@@ -144,58 +144,58 @@ def main():
             selected_pred.append('eos')
 
         # visualization of saliency
-        if opt.saliency_vis:
-            # make animation that shows the change of saliency through output time steps
-            # set_trace()
-            all_saliency = batch_data['saliency']
-            # sanity check
-            # if torch.max(all_saliency) > 1 or torch.max(all_saliency) < -1:
-            #     print(torch.max(all_saliency))
-            #     print(torch.min(all_saliency))
-            #     raise Exception('gradient value should be in range [-1, 1] (is this True???)')
-            fig, ax = plt.subplots(figsize=(12, 10))
-            # fig = plt.figure()
-            im = ax.imshow(all_saliency[:,0].data.cpu().numpy(), aspect='auto', cmap='Spectral', animated=True)
-            # ax = plt.axes()
-            # title = ax.text(0, 0, selected_pred[0])
-            plt.yticks(np.arange(len(batch.dataset.examples[counter].src)), batch.dataset.examples[counter].src)
-            plt.colorbar(im)
-            # set color/font of yticks
-            for idx in ansIdx:
-                plt.gca().get_yticklabels()[idx].set_color('blue')
-            def init():
-                im.set_array(np.ma.array(all_saliency[:,0], mask=True))
-                return im,
-            def update(i):
-                im.set_array(all_saliency[:,i].data.cpu().numpy())
-                # im.set_clim(vmin=torch.min(all_saliency[:,i]), vmax=torch.max(all_saliency[:,i]))
-                ax.set_title(selected_pred[i])
-                # fig.colorbar(im)
-                # print(i)
-                return im,
-            ani = animation.FuncAnimation(fig, update, frames=range(len(selected_pred)), interval=1000)
-            # set_trace()
-            # plt.draw()
-            # plt.show()
-            ani.save("saliency_animations_LSTM_attn/saliency_sent_" +
-                     str(counter+1) + "(" + opt.src.split('/')[1] + ").mp4")
+#         if opt.saliency_vis:
+#             # make animation that shows the change of saliency through output time steps
+#             # set_trace()
+#             all_saliency = batch_data['saliency']
+#             # sanity check
+#             # if torch.max(all_saliency) > 1 or torch.max(all_saliency) < -1:
+#             #     print(torch.max(all_saliency))
+#             #     print(torch.min(all_saliency))
+#             #     raise Exception('gradient value should be in range [-1, 1] (is this True???)')
+#             fig, ax = plt.subplots(figsize=(12, 10))
+#             # fig = plt.figure()
+#             im = ax.imshow(all_saliency[:,0].data.cpu().numpy(), aspect='auto', cmap='Spectral', animated=True)
+#             # ax = plt.axes()
+#             # title = ax.text(0, 0, selected_pred[0])
+#             plt.yticks(np.arange(len(batch.dataset.examples[counter].src)), batch.dataset.examples[counter].src)
+#             plt.colorbar(im)
+#             # set color/font of yticks
+#             for idx in ansIdx:
+#                 plt.gca().get_yticklabels()[idx].set_color('blue')
+#             def init():
+#                 im.set_array(np.ma.array(all_saliency[:,0], mask=True))
+#                 return im,
+#             def update(i):
+#                 im.set_array(all_saliency[:,i].data.cpu().numpy())
+#                 # im.set_clim(vmin=torch.min(all_saliency[:,i]), vmax=torch.max(all_saliency[:,i]))
+#                 ax.set_title(selected_pred[i])
+#                 # fig.colorbar(im)
+#                 # print(i)
+#                 return im,
+#             ani = animation.FuncAnimation(fig, update, frames=range(len(selected_pred)), interval=1000)
+#             # set_trace()
+#             # plt.draw()
+#             # plt.show()
+#             ani.save("saliency_animations_LSTM_attn/saliency_sent_" +
+#                      str(counter+1) + "(" + opt.src.split('/')[1] + ").mp4")
 
-        # visualization of attention matrix
-        # set_trace()
-        if opt.attn_vis:
-            attn = batch_data['attention'][0][0].t()
-            fig, ax = plt.subplots(figsize=(12, 10))
-            im = ax.imshow(attn.data.cpu().numpy(), aspect='auto', cmap='Greys')
-            im.set_clim(vmin=torch.min(attn), vmax=torch.max(attn))
-            plt.yticks(np.arange(len(batch.dataset.examples[counter].src)), batch.dataset.examples[counter].src)
-            for idx in ansIdx:
-                plt.gca().get_yticklabels()[idx].set_color('blue')
-            plt.xticks(np.arange(len(selected_pred)), tuple(selected_pred), rotation=45)
-            plt.colorbar(im)
-            # set_trace()
-            # plt.show()
-            plt.savefig('attention_visualizations_LSTM_attn/attn_vis_' + str(counter+1) +
-                        "(" + opt.src.split('/')[1] + ").png")
+#         # visualization of attention matrix
+#         # set_trace()
+#         if opt.attn_vis:
+#             attn = batch_data['attention'][0][0].t()
+#             fig, ax = plt.subplots(figsize=(12, 10))
+#             im = ax.imshow(attn.data.cpu().numpy(), aspect='auto', cmap='Greys')
+#             im.set_clim(vmin=torch.min(attn), vmax=torch.max(attn))
+#             plt.yticks(np.arange(len(batch.dataset.examples[counter].src)), batch.dataset.examples[counter].src)
+#             for idx in ansIdx:
+#                 plt.gca().get_yticklabels()[idx].set_color('blue')
+#             plt.xticks(np.arange(len(selected_pred)), tuple(selected_pred), rotation=45)
+#             plt.colorbar(im)
+#             # set_trace()
+#             # plt.show()
+#             plt.savefig('attention_visualizations_LSTM_attn/attn_vis_' + str(counter+1) +
+#                         "(" + opt.src.split('/')[1] + ").png")
 
         ##########################
         # end of visualization block
