@@ -24,8 +24,8 @@ merely research code, and that there is no warrenty.
 Feel free to modify it for your work.  
 
 ### Dependencies
-python3.5 \
-pytorch (only tested on v0.4.1) \
+python3.5+ (3.7 has dependcy issue with one of pacages)
+pytorch (only tested on v0.4.1) - (conda install pytorch=0.4.1 cuda90 -c pytorch) \
 OpenNMT-py (not tested on the latest version; pls use the version in this repo) \
 Stanford CoreNLP (optional) \
 torchtext-0.1.1 (this is important; if you use the latest 
