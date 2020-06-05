@@ -150,7 +150,7 @@ Below is a more elaborate illustration of QG-Net model:
 (refer tests/input.for.test/input.txt)
 - of course doing a test cross in humans is unethical and impractical. instead geneticists use pedigree analysis to study the inheritance pattern of human genetic diseases link
 - of course doing a test cross in humans is unethical and impractical. instead geneticists use pedigree analysis to study the inheritance pattern of human genetic diseases link
-- in 2012 the economic intellegince ranked warsaw as the 32nd most liveable city in the world?
+- in 2012 the economic intellegince ranked warsaw as the 32nd most liveable city in the world.
 
 ## Output
 ```
